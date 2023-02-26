@@ -13,7 +13,7 @@ schema = StructType([
     StructField("email", StringType(), True),
 ])
 
-spark = SparkSession.builder.appName("Quick Spark DataFrames 1").getOrCreate()
+spark = SparkSession.builder.appName("Count Distinct DropDuplicates Spark DataFrames").getOrCreate()
 df = spark.read.options(
         header='True',
         inferSchema='True',
@@ -22,12 +22,11 @@ df = spark.read.options(
     .schema(schema)\
     .csv("/opt/spark-data/StudentData.csv")
 
-df = df.withColumn("total marks", lit(120))\
-        .withColumn("average marks", col("marks")/col("total marks")*100)
-df.show()
+print(df.count())
 
-dfgreater80 = df.filter((col("average marks")>80) & (df.course == "OOP"))
-dfgreater80.show()
+dfgenderage = df.select("gender", "age")
+dfgenderage.show()
 
-dfgreater60 = df.filter((col("average marks")>60) & (df.course == "Cloud"))
-dfgreater60.show()
+print(dfgenderage.distinct().count())
+
+df.dropDuplicates(["course", "gender"]).show()
