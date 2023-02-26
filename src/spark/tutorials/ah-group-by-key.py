@@ -1,6 +1,6 @@
 from pyspark import SparkConf, SparkContext
 
-conf = SparkConf().setAppName("Quiz Filter RDD")
+conf = SparkConf().setAppName("Group By Key RDD")
 sc = SparkContext.getOrCreate(conf=conf)
 rdd = sc.textFile("/opt/spark-data/quiz-2.txt")
 print(rdd.collect())
