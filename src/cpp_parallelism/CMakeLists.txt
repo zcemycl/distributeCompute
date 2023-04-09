@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.09)
 project(Detach_Join_Project)
 set (CMAKE_CXX_STANDARD 11)
 
-add_library(tutorials src/aa_detach_join.cpp)
+add_library(tutorials 
+src/aa_detach_join.cpp
+src/ab_join_exception.cpp)
 
 target_include_directories(tutorials PUBLIC include)
 
