@@ -4,7 +4,8 @@ set (CMAKE_CXX_STANDARD 11)
 
 add_library(tutorials 
 src/aa_detach_join.cpp
-src/ab_join_exception.cpp)
+src/ab_join_exception.cpp
+src/ex1.cpp)
 
 target_include_directories(tutorials PUBLIC include)
 
