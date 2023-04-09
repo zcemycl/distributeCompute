@@ -3,3 +3,4 @@
 2. OpenMPI
 3. Ray
 4. Cuda
+5. C++ Parallelism
