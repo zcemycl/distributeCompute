@@ -27,9 +27,9 @@ public:
 
     // optional
     // delete copy construct
-    thread_guard(thread_guard & _t) = delete;
+    thread_guard(thread_guard const &) = delete;
     // delete copy assignment
-    thread_guard & operator= (thread_guard & _t) = delete;
+    thread_guard & operator= (thread_guard const &) = delete;
 };
 
 void join_exception() {
