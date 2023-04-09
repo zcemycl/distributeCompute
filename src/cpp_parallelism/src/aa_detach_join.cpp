@@ -5,7 +5,8 @@
 #include "aa_detach_join/module.h"
 
 void task(std::string task_name, int sleep_duration) {
-    std::cout << task_name << std::endl;
+    std::thread::id this_id = std::this_thread::get_id();
+    std::cout << "thread " << this_id << " " << task_name << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(sleep_duration));
     std::cout << task_name << std::endl;
 }
