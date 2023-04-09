@@ -74,3 +74,29 @@ gantt
     section main
     program: a10, 00-000, 1.015s
 ```
+
+```mermaid
+gantt
+    title Join
+    dateFormat ss-SSS
+    axisFormat %S-%L
+
+    section t1
+    join: 00-000, 0.05s
+    
+    section main
+    program: 00-000, 0.05s
+```
+
+```mermaid
+gantt
+    title Detach
+    dateFormat ss-SSS
+    axisFormat %S-%L
+
+    section t1
+    detach: 00-000, 1s
+    
+    section main
+    program: 00-000, 0.05s
+```
