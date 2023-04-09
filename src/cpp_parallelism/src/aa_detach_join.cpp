@@ -21,7 +21,7 @@ void bar(int sleep_duration) {
 
 void detach_join(){
     std::cout << "1. Detach join tutorial" << std::endl;
-    std::cout << "Bar 0 Detach, Foo 0 Join" << std::endl;
+    std::cout << "a. Bar 0 Detach, Foo 0 Join" << std::endl;
     auto start = std::chrono::steady_clock::now();
     std::thread bar_thread(bar, 0);
     std::thread foo_thread(foo, 0);
@@ -30,20 +30,22 @@ void detach_join(){
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed_seconds = end-start;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
 
-    std::cout << "Bar 0 Join, Foo 0 Join" << std::endl;
+    std::cout << "b. Bar 0 Join, Foo 0 Join" << std::endl;
     start = std::chrono::steady_clock::now();
-    bar_thread = std::thread(bar, 0);
     foo_thread = std::thread(foo, 0);
+    bar_thread = std::thread(bar, 0);
     bar_thread.join();
     foo_thread.join();
     end = std::chrono::steady_clock::now();
     elapsed_seconds = end-start;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
 
-    std::cout << "Bar 2000 Join, Foo 1000 Join" << std::endl;
+    std::cout << "c. Bar 1000 Join, Foo 1000 Join" << std::endl;
     start = std::chrono::steady_clock::now();
-    bar_thread = std::thread(bar, 2000);
+    bar_thread = std::thread(bar, 1000);
     foo_thread = std::thread(foo, 1000);
     bar_thread.join();
     foo_thread.join();
@@ -52,20 +54,22 @@ void detach_join(){
     end = std::chrono::steady_clock::now();
     elapsed_seconds = end-start;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
 
-    std::cout << "Bar 2000 Detach, Foo 1000 Join" << std::endl;
+    std::cout << "d. Bar 2000 Detach, Foo 1000 Join" << std::endl;
     start = std::chrono::steady_clock::now();
     bar_thread = std::thread(bar, 2000);
     foo_thread = std::thread(foo, 1000);
     bar_thread.detach();
     foo_thread.join();
     std::cout<<"After Foo Join"<<std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     end = std::chrono::steady_clock::now();
     elapsed_seconds = end-start;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
 
-    std::cout << "Bar 1000 Detach, Foo 2000 Join" << std::endl;
+    std::cout << "e. Bar 1000 Detach, Foo 2000 Join" << std::endl;
     start = std::chrono::steady_clock::now();
     bar_thread = std::thread(bar, 1000);
     foo_thread = std::thread(foo, 2000);
@@ -76,4 +80,18 @@ void detach_join(){
     end = std::chrono::steady_clock::now();
     elapsed_seconds = end-start;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
+
+    std::cout << "f. Bar 2000 Detach, Foo 1000 Detach" << std::endl;
+    start = std::chrono::steady_clock::now();
+    bar_thread = std::thread(bar, 2000);
+    foo_thread = std::thread(foo, 1000);
+    bar_thread.detach();
+    foo_thread.detach();
+    std::cout<<"After Foo Join"<<std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(4000));
+    end = std::chrono::steady_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    std::cout << "--------------" << std::endl;
 };
