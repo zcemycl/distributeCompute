@@ -5,6 +5,7 @@ set (CMAKE_CXX_STANDARD 11)
 add_library(tutorials 
 src/aa_detach_join.cpp
 src/ab_join_exception.cpp
+src/ac_accumulate.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
