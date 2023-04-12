@@ -1,0 +1,1 @@
+void local_global_test();
