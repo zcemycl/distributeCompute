@@ -17,6 +17,22 @@
         - IO Bound tasks
         - Context Switching
         - Race Condition
+            ```mermaid
+            gitGraph
+                commit id: "main function"
+                commit id: "init t1"
+                branch thread1
+                checkout thread1
+                commit id: "load image 1"
+                checkout main
+                commit id: "init t2"
+                checkout main
+                branch thread2
+                commit id: "load image 2"
+                checkout main
+                merge thread1 id: "gil 1"
+                merge thread2 id: "gil 2"
+            ```
     - Multiprocessing
         - CPU Bound tasks
         - May cause overhead
@@ -24,7 +40,15 @@
         - Combine Threading and Multiprocessing Libraries
     - Asyncio
         - IO Bound tasks
-        - Similar to Threading
+        - Similar to Threading, but one thread one process
+            ```mermaid
+            gitGraph
+                commit id: "main function"
+                commit id: "async call 1"
+                commit id: "async call 2"
+                commit id: "await" type: HIGHLIGHT
+                commit id: "complete"
+            ```
 2. OpenMPI
 3. Ray
 4. Cuda
