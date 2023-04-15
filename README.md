@@ -12,6 +12,17 @@
     mkdir /tmp/data/data-output
     docker exec -it spark-spark-master-1 bash -c "bin/spark-submit /opt/spark-apps/test.py"
     ```
+2. Python
+    - Thread
+        - IO Bound tasks
+        - Context Switching
+    - Multiprocessing
+        - CPU Bound tasks
+        - May cause overhead
+    - Concurrent.futures
+    - Asyncio
+        - IO Bound tasks
+        - Similar to Threading
 2. OpenMPI
 3. Ray
 4. Cuda
