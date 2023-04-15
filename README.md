@@ -59,6 +59,19 @@
 4. Cuda (Compute Unified Device Architecture)
     - CPU: Latency device with high local speed, small no. of cores, have optimisation hardware. 
     - GPU: Through put device with low lock speed, thousand of cores, no optimisation hardware. Context switching done by hardware, thread schedulers and dispatch units are implemented in hardware. 
+        ```mermaid
+        gitGraph
+            commit id: "init resources"
+            branch cpu
+            commit id: "init data"
+            branch gpu
+            commit id: "transfer data"
+            commit id: "kernel launch (grid/block)"
+            checkout cpu
+            merge gpu id: "transfer result"
+            checkout main
+            merge cpu id: "reclaim memory"
+        ```
 5. C++ Parallelism
     - Thread Guard
     - Lock Guard
