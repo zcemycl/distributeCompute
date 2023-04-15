@@ -3,12 +3,13 @@ from PIL import Image
 import urllib.request
 import numpy as np
 import matplotlib.pyplot as plt
+import threading
 from threading import Thread, Lock
 import random
 
 def download_img(url):
     img = np.array(Image.open(urllib.request.urlopen(url)))
-    print(f'{url}: {img.shape}')
+    print(f'{url}: {img.shape} {threading.get_ident()}')
     return (url, img.shape)
 
 class FakeList:
