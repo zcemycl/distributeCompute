@@ -12,6 +12,11 @@
     mkdir /tmp/data/data-output
     docker exec -it spark-spark-master-1 bash -c "bin/spark-submit /opt/spark-apps/test.py"
     ```
+    ```mermaid
+    flowchart LR;
+        A[main] --> B[master node];
+        B --> C[worker node 1] & D[worker node 2]
+    ```
 2. Python
     - Thread
         - IO Bound tasks
