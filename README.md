@@ -56,7 +56,9 @@
             ```
 2. OpenMPI
 3. Ray
-4. Cuda
+4. Cuda (Compute Unified Device Architecture)
+    - CPU: Latency device with high local speed, small no. of cores, have optimisation hardware. 
+    - GPU: Through put device with low lock speed, thousand of cores, no optimisation hardware. Context switching done by hardware, thread schedulers and dispatch units are implemented in hardware. 
 5. C++ Parallelism
     - Thread Guard
     - Lock Guard
