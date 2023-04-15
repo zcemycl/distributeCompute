@@ -16,10 +16,12 @@
     - Thread
         - IO Bound tasks
         - Context Switching
+        - Race Condition
     - Multiprocessing
         - CPU Bound tasks
         - May cause overhead
     - Concurrent.futures
+        - Combine Threading and Multiprocessing Libraries
     - Asyncio
         - IO Bound tasks
         - Similar to Threading
@@ -27,6 +29,9 @@
 3. Ray
 4. Cuda
 5. C++ Parallelism
+    - Thread Guard
+    - Lock Guard
+    - Race Condition
     ```mermaid
     gantt 
         title Bar 2000 Detach, Foo 1000 Join
