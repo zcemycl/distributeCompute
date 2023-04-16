@@ -77,6 +77,9 @@
         "fstream": "cpp",
         "iomanip": "cpp",
         "cfenv": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "__tree": "cpp",
+        "any": "cpp",
+        "list": "cpp"
     }
 }
