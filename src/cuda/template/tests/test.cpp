@@ -4,6 +4,7 @@
 #include "device_launch_parameters.h"
 #include "module.cuh"
 #include <iostream>
+#include <cmath>
 
  
 TEST(SquareArrTest, Random) {
@@ -13,10 +14,12 @@ TEST(SquareArrTest, Random) {
     a_host = new float[size];
     a_host[0] = 10.0;
     a_host[1] = 13.0;
+    float check1 = std::pow(a_host[0], 2.0);
     
     std::cout << a_host[0] << " " << a_host[1] << std::endl;
     test(a_host, numElements);
     std::cout << a_host[0] << " " << a_host[1] << std::endl;
+    ASSERT_EQ(check1, a_host[0]);
 
 }
  
