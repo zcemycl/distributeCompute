@@ -63,6 +63,20 @@
         "compare": "cpp",
         "concepts": "cpp",
         "algorithm": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "*.tcc": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "set": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp"
     }
 }

@@ -1,19 +1,8 @@
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
+#include "module.cuh"
 #include <stdio.h>
 #include <stdlib.h>
-
-__global__ void unique_gid_calc_2d(int * input){
-    int tix = threadIdx.x;
-    int tiy = threadIdx.y;
-    int bx = blockDim.x;
-    int by = blockDim.y;
-    int block_offsety = bx*tiy;
-    int col_offsetx = bx*by*blockIdx.x;
-    int row_offsety = bx*by*gridDim.x*blockIdx.y;
-    int gid = tix+block_offsety+col_offsetx+row_offsety;
-    printf("gid: %d, value: %d\n",gid,input[gid]);
-}
 
 int main() {
     int size = 16;
