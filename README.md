@@ -101,3 +101,6 @@
             section main
             program: a10, 00-000, 1.015s
         ```
+
+### References
+1. [Distributed, parallel, concurrent, High-Performance Computing.pdf](https://esling.github.io/documents/Generic.6b.Concurrence.pdf)
