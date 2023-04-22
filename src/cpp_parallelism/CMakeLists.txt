@@ -10,6 +10,7 @@ src/ad_local_global.cpp
 src/ae_lockguard.cpp
 src/af_deadlock.cpp
 src/ag_uniquelock.cpp
+src/ah_condition_var.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
