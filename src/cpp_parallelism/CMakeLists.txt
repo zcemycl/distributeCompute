@@ -8,6 +8,7 @@ src/ab_join_exception.cpp
 src/ac_accumulate.cpp
 src/ad_local_global.cpp
 src/ae_lockguard.cpp
+src/af_deadlock.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
