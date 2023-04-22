@@ -11,6 +11,7 @@ src/ae_lockguard.cpp
 src/af_deadlock.cpp
 src/ag_uniquelock.cpp
 src/ah_condition_var.cpp
+src/ai_async_future.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )

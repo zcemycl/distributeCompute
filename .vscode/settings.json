@@ -80,6 +80,7 @@
         "cinttypes": "cpp",
         "__tree": "cpp",
         "any": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "future": "cpp"
     }
 }

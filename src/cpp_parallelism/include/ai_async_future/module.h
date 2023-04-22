@@ -1,0 +1,1 @@
+void async_future_play();

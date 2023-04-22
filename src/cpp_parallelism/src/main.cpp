@@ -7,6 +7,7 @@
 #include "af_deadlock/module.h"
 #include "ag_uniquelock/module.h"
 #include "ah_condition_var/module.h"
+#include "ai_async_future/module.h"
 #include "ex1/module.h"
 #include "trial1_template/module.h"
 
@@ -19,7 +20,8 @@ int main() {
     // deadlock_test();
     // unique_lock_test();
     // naive_bus_arrival();
-    condition_var_bus_arrival();
+    // condition_var_bus_arrival();
+    async_future_play();
     // ex1();
     // try_template();
     

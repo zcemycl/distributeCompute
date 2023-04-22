@@ -73,9 +73,7 @@
             merge cpu id: "reclaim memory"
         ```
 5. C++ Parallelism
-    - Thread Guard
-    - Lock Guard
-    - Race Condition
+    - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future
     - Join vs Detach
         ```mermaid
         gantt 
