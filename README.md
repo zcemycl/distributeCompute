@@ -1,23 +1,5 @@
 ### Techniques
-1. Spark
-    ```
-    git clone https://github.com/zcemycl/systemDeploy.git
-    cd systemDeploy/src/containers/docker/spark/
-    docker build -t cluster-apache-spark:latest .
-    docker-compose up -d
-    mkdir /tmp/data
-    mkdir /tmp/apps
-    cp *.csv /tmp/data
-    cp *.py /tmp/apps
-    mkdir /tmp/data/data-output
-    docker exec -it spark-spark-master-1 bash -c "bin/spark-submit /opt/spark-apps/test.py"
-    ```
-    ```mermaid
-    flowchart LR;
-        A[main] --> B[master node];
-        B --> C[worker node 1] & D[worker node 2]
-    ```
-2. Python
+1. Python
     - Thread
         - IO Bound tasks
         - Context Switching
@@ -54,9 +36,26 @@
                 commit id: "await" type: HIGHLIGHT
                 commit id: "complete"
             ```
-2. OpenMPI
-3. Ray
-4. Cuda (Compute Unified Device Architecture)
+    - Spark
+        ```
+        git clone https://github.com/zcemycl/systemDeploy.git
+        cd systemDeploy/src/containers/docker/spark/
+        docker build -t cluster-apache-spark:latest .
+        docker-compose up -d
+        mkdir /tmp/data
+        mkdir /tmp/apps
+        cp *.csv /tmp/data
+        cp *.py /tmp/apps
+        mkdir /tmp/data/data-output
+        docker exec -it spark-spark-master-1 bash -c "bin/spark-submit /opt/spark-apps/test.py"
+        ```
+        ```mermaid
+        flowchart LR;
+            A[main] --> B[master node];
+            B --> C[worker node 1] & D[worker node 2]
+        ```
+
+2. Cuda (Compute Unified Device Architecture)
     - CPU: Latency device with high local speed, small no. of cores, have optimisation hardware. 
     - GPU: Through put device with low lock speed, thousand of cores, no optimisation hardware. Context switching done by hardware, thread schedulers and dispatch units are implemented in hardware. 
         ```mermaid
@@ -72,7 +71,7 @@
             checkout main
             merge cpu id: "reclaim memory"
         ```
-5. C++ Parallelism
+3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future
     - Join vs Detach
         ```mermaid
@@ -99,6 +98,66 @@
             section main
             program: a10, 00-000, 1.015s
         ```
+    - Locks
+        ```mermaid
+        gantt
+            title Double locks
+            dateFormat ss-SSS
+            axisFormat %S-%L
+            section t1
+            m1 lock: 00-000, 0.005s
+            t1m1: 00-005, 0.005s
+            sleep: 00-010, 1s
+            wait m2 unlock: crit, 01-010, 0.51s
+            m2 lock: 01-520, 0.005s
+            t1m2: 01-525, 0.005s
+            m1 m2 unlock: 01-530, 0.005s
+
+
+            section t2
+            m2 lock: 00-005, 0.005s
+            t2m2: 00-010, 0.005s
+            sleep: 00-015, 1.5s
+            m2 unlock: 01-515, 0.005s
+
+            section stdout
+            1. t1m1: 00-005, 0.005s
+            2. t2m2: 00-010, 0.005s
+            3. t1m2: 01-525, 0.005s
+        ```
+    - Racing Conditions
+        ```mermaid
+        gantt 
+            title Racing Condition
+            dateFormat ss-SSS
+            axisFormat %S-%L
+
+            section Thread 1
+            op1: 00-000, 0.002s
+            op2: 00-002, 0.002s
+            op3: 00-004, 0.002s
+
+            section Thread 2
+            op1: 00-001, 0.002s
+            op2: 00-003, 0.002s
+            op3: 00-005, 0.002s
+
+            section Linked List
+            [4][1,2,3],s-1: 00-000, 0.002s
+            [5][1,2,3],s-1: 00-001, 0.002s
+            [4,1,2,3],s-1: 00-002, 0.002s
+            [5,1,2,3],s-1: 00-003, 0.002s
+            [4,1,2,3],s-4: 00-004, 0.002s
+            [5,1,2,3],s-5: 00-005, 0.002s
+
+            section expected
+            [5,4,1,2,3],s-5: 00-000, 0.007s
+
+            section final
+            [5,1,2,3],s-5: 00-000, 0.007s
+        ```
+4. OpenMPI
+5. Ray
 
 ### References
 1. [Distributed, parallel, concurrent, High-Performance Computing.pdf](https://esling.github.io/documents/Generic.6b.Concurrence.pdf)
