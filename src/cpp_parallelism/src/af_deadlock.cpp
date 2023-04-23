@@ -6,6 +6,7 @@
 #include <list>
 #include <numeric>
 #include <atomic>
+#include "af_deadlock/module.h"
 
 std::mutex m1;
 std::mutex m2;

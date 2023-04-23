@@ -4,6 +4,7 @@
 #include <chrono>
 #include <functional>
 #include <stdexcept>
+#include "aj_promise/module.h"
 
 void step2(std::future<int>& fut){
     int tmp_val = fut.get()+2;

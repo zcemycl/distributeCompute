@@ -4,6 +4,7 @@
 #include <mutex>
 #include <vector>
 #include <numeric>
+#include <functional>
 #include "ac_accumulate/module.h"
 
 #define MIN_BLOCK_SIZE 1000

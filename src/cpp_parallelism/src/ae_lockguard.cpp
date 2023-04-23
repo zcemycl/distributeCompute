@@ -6,6 +6,7 @@
 #include <list>
 #include <numeric>
 #include <atomic>
+#include "ae_lockguard/module.h"
 
 std::list<int> my_list;
 std::mutex m;

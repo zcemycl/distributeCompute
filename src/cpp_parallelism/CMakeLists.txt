@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.12)
 project(Detach_Join_Project)
 set (CMAKE_CXX_STANDARD 20)
 
+find_package(Threads REQUIRED)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
 # set(JTHREAD_FOUND 1)
 # set(JTHREAD_INCLUDE_DIRS "/opt/homebrew/Cellar/jthread/1.3.3/include")
 # set(JTHREAD_LIBRARIES  "-L/opt/homebrew/Cellar/jthread/1.3.3/lib" "-ljthread")
@@ -27,7 +30,9 @@ src/ex1.cpp
 src/trial1_template.cpp
 )
 
+add_compile_options(-pthread)
+
 target_include_directories(tutorials PUBLIC include)
 
 add_executable(runTutorials src/main.cpp)
-target_link_libraries(runTutorials pthread tutorials)
+target_link_libraries(runTutorials pthread tutorials Threads::Threads)

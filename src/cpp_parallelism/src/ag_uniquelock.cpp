@@ -2,6 +2,7 @@
 #include <thread>
 #include <chrono>
 #include <mutex>
+#include "ag_uniquelock/module.h"
 
 std::mutex m1;
 std::mutex m2;
