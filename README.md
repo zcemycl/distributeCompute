@@ -162,3 +162,4 @@
 
 ### References
 1. [Distributed, parallel, concurrent, High-Performance Computing.pdf](https://esling.github.io/documents/Generic.6b.Concurrence.pdf)
+2. [Compiler support for C++20](https://en.cppreference.com/w/cpp/compiler_support/20#C.2B.2B14_library_features)
