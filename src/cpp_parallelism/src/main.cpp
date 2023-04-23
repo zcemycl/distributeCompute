@@ -24,8 +24,8 @@ int main() {
     // naive_bus_arrival();
     // condition_var_bus_arrival();
     // async_future_play();
-    play_promise();
-    // play_jthread();
+    // play_promise();
+    play_jthread();
     // ex1();
     // try_template();
     

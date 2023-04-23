@@ -4,7 +4,7 @@
 #include "ak_cxx20_jthread/module.h"
 
 // using namespace std::literals;
-// using namespace std::literals::chrono_literals;
+using namespace std::literals::chrono_literals;
 
 void do_sth(std::stop_token token){
     int counter{0};

@@ -73,7 +73,7 @@
         ```
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
-    - JThread, Stop Token (Macos clang does not support)
+    - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile)
     - Join vs Detach
         ```mermaid
         gantt 

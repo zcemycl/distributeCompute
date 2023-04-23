@@ -25,7 +25,7 @@ src/ag_uniquelock.cpp
 src/ah_condition_var.cpp
 src/ai_async_future.cpp
 src/aj_promise.cpp
-# src/ak_cxx20_jthread.cpp
+src/ak_cxx20_jthread.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
