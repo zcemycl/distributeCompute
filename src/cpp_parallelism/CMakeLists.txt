@@ -1,6 +1,15 @@
-cmake_minimum_required(VERSION 3.09)
+cmake_minimum_required(VERSION 3.12)
 project(Detach_Join_Project)
-set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD 20)
+
+# set(JTHREAD_FOUND 1)
+# set(JTHREAD_INCLUDE_DIRS "/opt/homebrew/Cellar/jthread/1.3.3/include")
+# set(JTHREAD_LIBRARIES  "-L/opt/homebrew/Cellar/jthread/1.3.3/lib" "-ljthread")
+# include_directories(${JTHREAD_INCLUDE_DIRS})
+# include_directories(/opt/homebrew/Cellar/jthread/1.3.3/lib)
+
+# find_package(Boost)
+# include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(tutorials 
 src/aa_detach_join.cpp
@@ -13,6 +22,7 @@ src/ag_uniquelock.cpp
 src/ah_condition_var.cpp
 src/ai_async_future.cpp
 src/aj_promise.cpp
+# src/ak_cxx20_jthread.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
