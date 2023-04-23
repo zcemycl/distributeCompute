@@ -54,6 +54,7 @@
             A[main] --> B[master node];
             B --> C[worker node 1] & D[worker node 2]
         ```
+    - Ray
 
 2. Cuda (Compute Unified Device Architecture)
     - CPU: Latency device with high local speed, small no. of cores, have optimisation hardware. 
@@ -74,6 +75,9 @@
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
     - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile)
+    - Boost (Dockerfile)
+    - OpenMP
+    - OpenMPI
     - Join vs Detach
         ```mermaid
         gantt 
@@ -157,8 +161,6 @@
             section final
             [5,1,2,3],s-5: 00-000, 0.007s
         ```
-4. OpenMPI
-5. Ray
 
 ### References
 1. [Distributed, parallel, concurrent, High-Performance Computing.pdf](https://esling.github.io/documents/Generic.6b.Concurrence.pdf)
