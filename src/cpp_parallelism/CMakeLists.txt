@@ -11,8 +11,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 # include_directories(${JTHREAD_INCLUDE_DIRS})
 # include_directories(/opt/homebrew/Cellar/jthread/1.3.3/lib)
 
-# find_package(Boost)
-# include_directories(${Boost_INCLUDE_DIRS})
+find_package(Boost)
+include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(tutorials 
 src/aa_detach_join.cpp
@@ -26,6 +26,7 @@ src/ah_condition_var.cpp
 src/ai_async_future.cpp
 src/aj_promise.cpp
 src/ak_cxx20_jthread.cpp
+src/al_cxx20_boost_barrier.cpp
 src/ex1.cpp
 src/trial1_template.cpp
 )
@@ -35,4 +36,6 @@ add_compile_options(-pthread)
 target_include_directories(tutorials PUBLIC include)
 
 add_executable(runTutorials src/main.cpp)
-target_link_libraries(runTutorials pthread tutorials Threads::Threads)
+target_link_libraries(runTutorials 
+pthread tutorials
+${Boost_LIBRARIES} boost_system boost_thread)

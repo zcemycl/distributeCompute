@@ -10,6 +10,7 @@
 #include "ai_async_future/module.h"
 #include "aj_promise/module.h"
 #include "ak_cxx20_jthread/module.h"
+#include "al_cxx20_boost_barrier/module.h"
 #include "ex1/module.h"
 #include "trial1_template/module.h"
 
@@ -24,8 +25,9 @@ int main() {
     // naive_bus_arrival();
     // condition_var_bus_arrival();
     // async_future_play();
-    // play_promise();
+    play_promise();
     play_jthread();
+    play_barrier();
     // ex1();
     // try_template();
     
