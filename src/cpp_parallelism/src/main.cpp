@@ -11,6 +11,7 @@
 #include "aj_promise/module.h"
 #include "ak_cxx20_jthread/module.h"
 #include "al_cxx20_boost_barrier/module.h"
+#include "am_cxx20_coroutines/module.h"
 #include "ex1/module.h"
 #include "trial1_template/module.h"
 
@@ -28,6 +29,7 @@ int main() {
     play_promise();
     play_jthread();
     play_barrier();
+    play_coroutines();
     // ex1();
     // try_template();
     
