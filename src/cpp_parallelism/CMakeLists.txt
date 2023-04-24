@@ -35,3 +35,18 @@ target_link_libraries(runTutorials
 pthread
 tutorials
 ${Boost_LIBRARIES} boost_system boost_thread)
+
+# target_include_directories(tutorials PUBLIC tests)
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+message("${GTEST_INCLUDE_DIRS}")
+
+add_library(test_cases INTERFACE)
+target_include_directories(test_cases INTERFACE tests)
+
+add_executable(runTests tests/test_main.cpp)
+target_link_libraries(runTests
+test_cases
+pthread
+tutorials
+${Boost_LIBRARIES} boost_system boost_thread GTest::GTest GTest::gmock)
