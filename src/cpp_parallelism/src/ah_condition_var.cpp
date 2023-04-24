@@ -9,7 +9,7 @@ bool have_i_arrived = false;
 int dist_my_distination = 10;
 int dist_covered = 0;
 std::condition_variable cv;
-std::mutex m;
+std::mutex mh;
 
 bool keep_driving(){
     while (true){
@@ -39,7 +39,7 @@ void set_alarm_and_take_nap(){
 }
 
 void notify_me(){
-    std::unique_lock<std::mutex> ul(m);
+    std::unique_lock<std::mutex> ul(mh);
     cv.wait(ul, [] {return dist_covered==dist_my_distination;});
     std::cout << std::this_thread::get_id() << " finally i am there, distance covered = " << dist_covered << std::endl;
 }

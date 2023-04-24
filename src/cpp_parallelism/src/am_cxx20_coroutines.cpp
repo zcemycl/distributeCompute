@@ -35,7 +35,7 @@ struct resumable::promise_type {
     }
 };
 
-resumable foo() {
+resumable co_foo() {
     std::cout << "a" << std::endl;
     co_await std::suspend_always();
     std::cout << "b" << std::endl;
@@ -44,7 +44,7 @@ resumable foo() {
 }
 
 void play_coroutines() {
-    resumable res1 = foo();
+    resumable res1 = co_foo();
     res1.resume();
     res1.resume();
     res1.resume();
