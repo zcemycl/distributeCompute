@@ -74,7 +74,7 @@
         ```
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
-    - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile)
+    - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile), Coroutines
     - Boost (Dockerfile)
     - OpenMP
     - OpenMPI
