@@ -2,6 +2,7 @@
 #include "device_launch_parameters.h"
 #include <stdio.h>
 #include <iostream>
+#include "aa_basic_hello/module.cuh"
 
 __global__ void hello_cuda(){
     printf("Hello CUDA world \n");
