@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
 // #include <gmock/gmock.h>
-#include "cuda_runtime.h"
-#include "device_launch_parameters.h"
 #include "aa_basic_hello/module.cuh"
 #include <iostream>
 #include <cmath>
