@@ -1,0 +1,1 @@
+void access_1d_arr();

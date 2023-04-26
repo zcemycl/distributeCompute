@@ -10,6 +10,7 @@ add_library(tutorials
 src/aa_basic_hello.cu
 src/ab_threadidx.cu
 src/ac_blockgrid.cu
+src/ad_1darr.cu
 )
 target_include_directories(tutorials PUBLIC include)
 
