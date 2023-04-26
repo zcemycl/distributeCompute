@@ -4,6 +4,7 @@
 #include "test_ab_threadidx.hpp"
 #include "test_ac_blockgrid.hpp"
 #include "test_ad_1darr.hpp"
+#include "test_ae_2darr.hpp"
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
