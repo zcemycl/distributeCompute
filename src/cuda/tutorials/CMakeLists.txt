@@ -9,6 +9,7 @@ message("${GTEST_INCLUDE_DIRS}")
 add_library(tutorials
 src/aa_basic_hello.cu
 src/ab_threadidx.cu
+src/ac_blockgrid.cu
 )
 target_include_directories(tutorials PUBLIC include)
 

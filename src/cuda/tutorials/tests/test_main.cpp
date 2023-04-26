@@ -2,6 +2,7 @@
 // #include <gmock/gmock.h>
 #include "test_aa_basic_hello.hpp"
 #include "test_ab_threadidx.hpp"
+#include "test_ac_blockgrid.hpp"
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
