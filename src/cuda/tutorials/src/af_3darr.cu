@@ -15,8 +15,23 @@ __global__ void unique_gid_calc_block2d_grid3d(int * data){
     int xy_offset = num_threads_in_xy *  blockIdx.z;
 
     int gid = xy_offset + row_offset + block_offset + tid;
-    printf("blockIdx.x : %d, blockIdx.y : %d, blockIdx.z : %d, threadIdx.x : %d, threadIdx.z : %d, gid : %d - data : %d \n",
+    printf("blockIdx.x : %d, blockIdx.y : %d, blockIdx.z : %d, threadIdx.x : %d, threadIdx.y : %d, gid : %d - data : %d \n",
         blockIdx.x, blockIdx.y, blockIdx.z, threadIdx.x, threadIdx.y, gid, data[gid]);
+
+}
+
+__global__ void unique_gid_calc_block3d_grid3d(int * data){
+    int tid = threadIdx.x + threadIdx.y * blockDim.x + threadIdx.z * blockDim.x * blockDim.y;
+    int num_threads_in_block = blockDim.x * blockDim.y * blockDim.z;
+    int col_offset = blockIdx.x * num_threads_in_block;
+    int num_threads_in_row = num_threads_in_block * gridDim.x;
+    int row_offset = blockIdx.y * num_threads_in_row;
+    int num_threads_in_layer = num_threads_in_row * gridDim.y;
+    int layer_offset = blockIdx.z * num_threads_in_layer;
+
+    int gid = layer_offset + row_offset + col_offset + tid;
+    printf("blockIdx.x : %d, blockIdx.y : %d, blockIdx.z : %d, threadIdx.x : %d, threadIdx.y : %d, threadIdx.z : %d, gid : %d - data : %d \n",
+        blockIdx.x, blockIdx.y, blockIdx.z, threadIdx.x, threadIdx.y, threadIdx.z, gid, data[gid]);
 
 }
 
@@ -40,6 +55,11 @@ void access_3d_arr() {
     dim3 grid(2,2,4);
 
     unique_gid_calc_block2d_grid3d <<<grid,block>>> (d_data);
+    cudaDeviceSynchronize();
+
+    dim3 block3d(2,2,2);
+    dim3 grid3d(2,2,2);
+    unique_gid_calc_block3d_grid3d <<<grid3d,block3d>>> (d_data);
     cudaDeviceSynchronize();
 
     cudaDeviceReset();

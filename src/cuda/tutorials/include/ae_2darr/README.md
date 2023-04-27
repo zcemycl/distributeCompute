@@ -36,5 +36,5 @@
         - `0+2*1+2*2*1+2*2*2*1=14`
         - `1+2*1+2*2*1+2*2*2*1=15`
 
-+ 3D Calculations
++ 3D Calculations (2D Block, 3D Grid)
     - `tx + Bx*ty + Bx*By*bx + Bx*By*Gx*by + Bx*By*Gx*Gy*bz`
