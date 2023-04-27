@@ -8,14 +8,15 @@ message("${GTEST_INCLUDE_DIRS}")
 
 add_library(tutorials
 src/common.cpp
-# src/common.cu
-src/aa_basic_hello.cu
-src/ab_threadidx.cu
-src/ac_blockgrid.cu
-src/ad_1darr.cu
-src/ae_2darr.cu
-src/af_3darr.cu
-src/ag_sum_arr.cu
+# src/common.cu # not usable
+# src/aa_basic_hello.cu
+# src/ab_threadidx.cu
+# src/ac_blockgrid.cu
+# src/ad_1darr.cu
+# src/ae_2darr.cu
+# src/af_3darr.cu
+# src/ag_sum_arr.cu
+src/ah_device_prop.cu
 )
 target_include_directories(tutorials PUBLIC include)
 target_include_directories(tutorials INTERFACE include)
