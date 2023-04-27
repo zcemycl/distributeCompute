@@ -6,6 +6,7 @@
 #include "test_ad_1darr.hpp"
 #include "test_ae_2darr.hpp"
 #include "test_af_3darr.hpp"
+#include "test_ag_sum_arr.hpp"
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);

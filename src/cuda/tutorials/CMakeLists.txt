@@ -13,6 +13,7 @@ src/ac_blockgrid.cu
 src/ad_1darr.cu
 src/ae_2darr.cu
 src/af_3darr.cu
+src/ag_sum_arr.cu
 )
 target_include_directories(tutorials PUBLIC include)
 
