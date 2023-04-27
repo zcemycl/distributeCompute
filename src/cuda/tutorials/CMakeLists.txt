@@ -7,6 +7,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 message("${GTEST_INCLUDE_DIRS}")
 
 add_library(tutorials
+src/common.cpp
+# src/common.cu
 src/aa_basic_hello.cu
 src/ab_threadidx.cu
 src/ac_blockgrid.cu
@@ -16,6 +18,7 @@ src/af_3darr.cu
 src/ag_sum_arr.cu
 )
 target_include_directories(tutorials PUBLIC include)
+target_include_directories(tutorials INTERFACE include)
 
 add_library(test_cases INTERFACE)
 target_include_directories(test_cases INTERFACE tests)

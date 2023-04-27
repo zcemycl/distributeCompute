@@ -1,0 +1,1 @@
+void compare_arrs(int * a, int * b, int size);
