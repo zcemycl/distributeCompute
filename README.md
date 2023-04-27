@@ -72,6 +72,14 @@
             checkout main
             merge cpu id: "reclaim memory"
         ```
+        - Thread, Block, Grid
+            ||B1x|B2x|B3x|B4x|
+            |---|---|---|---|---|
+            |B1y|TTT<br>TTT|TTT<br>TTT|TTT<br>TTT|TTT<br>TTT|
+            |B2y|TTT<br>TTT|TTT<br>TTT|TTT<br>TTT|TTT<br>TTT|
+            - Each T is a thread in a block.
+            - Each Block has (x,y,z) = (3,2,1) threads
+            - Grid dimension is (x,y,z) = (4,2,1)
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
     - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile), Coroutines
