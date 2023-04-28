@@ -51,6 +51,9 @@ docker run --gpus all cuda_gtest # use gpu in your host
             |0|...|31|\||32|...|39|(14 idle)\||40|...|71|\||72|...|79|(14 idle)|
             |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
     - Therefore, a multiple of 32 in block size is avoiding the waste of resources.
+    - Warp Divergence (avoid switch if else statements which split cases into smaller than number of threads in warp.)
+        - Odd/even: active half , inactive half. 
+        - If/else: active one case, inactive the rest. 
 
 ### References
 1. [Github Nvidia Cuda Samples](https://github.com/nvidia/cuda-samples)

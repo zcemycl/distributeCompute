@@ -81,6 +81,15 @@
             - Each Block has (x,y,z) = (3,2,1) threads
             - Grid dimension is (x,y,z) = (4,2,2)
             - `tx + Bx*ty + Bx*By*bx + Bx*By*Gx*by + Bx*By*Gx*Gy*bz`
+        - Warps (32 threads)
+            - Software
+                |0|1|...|38|39|
+                |---|---|---|---|---|
+                |0|1|...|38|39|
+            - Hardware
+                |0|...|31|\||32|...|39|(14 idle)\||40|...|71|\||72|...|79|(14 idle)|
+                |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+            - Therefore, a multiple of 32 in block size is avoiding the waste of resources.
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
     - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile), Coroutines

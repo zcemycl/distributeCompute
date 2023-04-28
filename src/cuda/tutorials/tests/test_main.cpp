@@ -8,6 +8,7 @@
 // #include "test_af_3darr.hpp"
 // #include "test_ag_sum_arr.hpp"
 #include "test_ah_device_prop.hpp"
+#include "test_ai_warp_details.hpp"
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);

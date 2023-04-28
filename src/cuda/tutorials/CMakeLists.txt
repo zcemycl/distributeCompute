@@ -17,6 +17,7 @@ src/common.cpp
 # src/af_3darr.cu
 # src/ag_sum_arr.cu
 src/ah_device_prop.cu
+src/ai_warp_details.cu
 )
 target_include_directories(tutorials PUBLIC include)
 target_include_directories(tutorials INTERFACE include)
