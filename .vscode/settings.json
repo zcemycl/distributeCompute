@@ -84,6 +84,8 @@
         "future": "cpp",
         "csignal": "cpp",
         "coroutine": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "ranges": "cpp",
+        "stop_token": "cpp"
     }
 }

@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 project(CUDA_Tutorials LANGUAGES CUDA CXX)
 find_package(CUDA REQUIRED)
 
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G")
+
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 message("${GTEST_INCLUDE_DIRS}")
@@ -34,3 +36,4 @@ tutorials)
 
 add_executable(runTutorials src/main.cpp)
 target_link_libraries(runTutorials tutorials)
+# target_compile_options(runTutorials -G)

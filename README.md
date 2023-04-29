@@ -95,6 +95,11 @@
          __PREFETCH=off /media/yui/Disk/nsight-systems-2021.3.1/bin/nsys profile -o noprefetch --stats=true ./runTutorials 
         ```
         ![image](resources/nsight-system.png)
+    - Nsight Compute
+        ```
+        /NVIDIA-Nsight-Compute-2021.2/ncu -o profile_test_div -f -k "divergence_code" --target-processes all --section "WarpStateStats" --section "SourceCounters" --launch-count 1 ./div.out
+        ```
+        ![image](resources/nsight-compute.png)
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
     - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile), Coroutines
