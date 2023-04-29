@@ -32,5 +32,5 @@ test_cases
 GTest::GTest
 tutorials)
 
-add_executable(runTutorials.out src/main.cpp)
-target_link_libraries(runTutorials.out tutorials)
+add_executable(runTutorials src/main.cpp)
+target_link_libraries(runTutorials tutorials)

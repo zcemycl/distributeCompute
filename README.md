@@ -90,6 +90,11 @@
                 |0|...|31|\||32|...|39|(14 idle)\||40|...|71|\||72|...|79|(14 idle)|
                 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
             - Therefore, a multiple of 32 in block size is avoiding the waste of resources.
+    - Nsight System
+        ```
+         __PREFETCH=off /media/yui/Disk/nsight-systems-2021.3.1/bin/nsys profile -o noprefetch --stats=true ./runTutorials 
+        ```
+        ![image](resources/nsight-system.png)
 3. C++ Parallelism
     - Thread Guard, Lock Guard, Race Condition, Deadlock, Unique Lock, Async Future, Promise
     - JThread, Stop Token (Macos clang does not support, Alternative is run with dockerfile), Coroutines
