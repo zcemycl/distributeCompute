@@ -15,4 +15,4 @@ WORKDIR /tmp
 RUN mkdir -p build 
 WORKDIR /tmp/build
 RUN cmake .. && make
-CMD nvidia-smi ; ./runTests
+CMD nvidia-smi ; ./runTests ; nvprof --metrics branch_efficiency ./runTutorials.out

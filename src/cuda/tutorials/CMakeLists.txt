@@ -16,8 +16,9 @@ src/common.cpp
 # src/ae_2darr.cu
 # src/af_3darr.cu
 # src/ag_sum_arr.cu
-src/ah_device_prop.cu
-src/ai_warp_details.cu
+# src/ah_device_prop.cu
+# src/ai_warp_details.cu
+src/aj_warp_divergence.cu
 )
 target_include_directories(tutorials PUBLIC include)
 target_include_directories(tutorials INTERFACE include)
@@ -30,3 +31,6 @@ target_link_libraries(runTests
 test_cases
 GTest::GTest
 tutorials)
+
+add_executable(runTutorials.out src/main.cpp)
+target_link_libraries(runTutorials.out tutorials)
