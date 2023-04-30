@@ -57,3 +57,4 @@ docker run --gpus all cuda_gtest # use gpu in your host
 
 ### References
 1. [Github Nvidia Cuda Samples](https://github.com/nvidia/cuda-samples)
+2. [Youtube CUDA Programming -- Better Warp SM explains](https://www.youtube.com/watch?v=xwbD6fL5qC8)
