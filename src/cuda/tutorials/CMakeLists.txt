@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(CUDA_Tutorials LANGUAGES CUDA CXX)
+set(CMAKE_CXX_STANDARD 20)
 find_package(CUDA REQUIRED)
 
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G")
@@ -21,6 +22,7 @@ src/common.cpp
 # src/ah_device_prop.cu
 # src/ai_warp_details.cu
 src/aj_warp_divergence.cu
+src/ak_profile_driven_optimise_nvprof.cu
 )
 target_include_directories(tutorials PUBLIC include)
 target_include_directories(tutorials INTERFACE include)
