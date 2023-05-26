@@ -1,0 +1,1 @@
+void test_setup1(int argc, char** argv);
